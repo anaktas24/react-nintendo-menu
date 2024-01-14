@@ -6,14 +6,32 @@ function App() {
   return (
     <>
       <div>
-       <h1>Menu</h1>
-       <h2>Pizzas:</h2>
-       <Pizza/>
-       <Pizza2/>
+       <Header/>
+       <Menu/>
+
+       <Footer/>
       </div>
-      <h1>Homepage</h1>
     </>
   )
+}
+
+function Header(){
+  return <h1>React Pizza Co.</h1>
+}
+
+function Menu(){
+  return (
+    <div>
+      <h2>Our menu</h2>
+      <Pizza/>
+      <Pizza/>
+      <Pizza2/>
+    </div>
+  )
+}
+
+function Footer(){
+  return <footer>{new Date().toLocaleTimeString()}. Were currently open</footer>
 }
 
 function Pizza(){
