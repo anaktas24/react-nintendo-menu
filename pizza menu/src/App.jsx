@@ -1,4 +1,5 @@
 import './App.css'
+import './data.js'
 
 function App() {
 
@@ -31,10 +32,22 @@ function Menu(){
   return (
     <main className='menu'>
       <h2>Our menu</h2>
-      <Pizza/>
-      <Pizza/>
-      <Pizza2/>
+      <Pizza
+        name='Pizza ...'
+        ingridients='Pepperoni, Tomato, Mozarella, Chilli, Onion'
+        photoName='./public/pizza_diavola.jpg'
+        price={10}/>
     </main>
+  )
+}
+
+function Pizza(props){
+  return(
+    <div>
+      <img src={props.photoName} alt={props.name}/>
+      <h3>{props.name}</h3>
+      <p>{props.ingridients}</p>
+    </div>
   )
 }
 
@@ -49,23 +62,6 @@ function Footer(){
   return <footer className='footer'>{new Date().toLocaleTimeString()}. Were currently open</footer>
 }
 
-function Pizza(){
-  return(
-    <div>
-      <img src="../pizza_diavola.jpeg" alt="pizza"/>
-      <h3>Pizza Diavola</h3>
-      <p>Pepperoni, Tomato, Mozarella, Chilli, Onion</p>
-    </div>
-  )
-}
 
-function Pizza2(){
-  return(
-    <div>
-      <h3>Pizza Margarita</h3>
-      <p>Mozzarella, Tomato</p>
-    </div>
-  )
-}
 
 export default App
