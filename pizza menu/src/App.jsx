@@ -28,6 +28,25 @@ function Card(){
     </div>
   )
 }
+function Avatar(props){
+  return(
+    <div>
+      <img src={props.photoName} alt={props.name}/>
+    </div>
+  )
+}
+function Intro(){
+  const style={}
+  return(
+    <h1 style={style}>React Pizza Co.</h1>
+  )
+}
+function SkillList(props){
+  return(
+    <p>{props.ingridients}</p>
+  )
+}
+
 
 function Header(){
   const style = {}
