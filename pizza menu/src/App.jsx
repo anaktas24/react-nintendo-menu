@@ -1,5 +1,6 @@
 import './App.css'
 import './data.js'
+import './style.css'
 
 function App() {
 
@@ -9,10 +10,22 @@ function App() {
       <div>
        <Header/>
        <Menu/>
-
+       <Card/>
        <Footer/>
       </div>
     </>
+  )
+}
+
+function Card(){
+  return(
+    <div className='card'>
+      <Avatar />
+      <div className='data'>
+        <Intro />
+        <SkillList />
+      </div>
+    </div>
   )
 }
 
