@@ -1,13 +1,60 @@
+import React from "react"
+import { ReactDOM } from "react";
 import './App.css'
-import './data.js'
-import './style.css'
+
+
+const consoleData = [
+  {
+    name: "N64",
+    description: "Console 1996",
+    price: 6,
+    photoName: "./n64.jpg",
+    soldOut: false,
+  },
+  {
+    name: "Game Cube",
+    description: "Console 2001",
+    price: 10,
+    photoName: "./cube.jpg",
+    soldOut: false,
+  },
+  {
+    name: "GameBoy Advance",
+    description: "Console 2001",
+    price: 12,
+    photoName: "./adv.jpg",
+    soldOut: false,
+  },
+  {
+    name: "NES",
+    description: "Console 1983",
+    price: 12,
+    photoName: "./nes.jpg",
+    soldOut: false,
+  },
+  {
+    name: "Super Famicom",
+    description: "Console 1990",
+    price: 15,
+    photoName: "./super.jpg",
+    soldOut: true,
+  },
+  {
+    name: "Wii",
+    description: "Console 2006",
+    price: 18,
+    photoName: "./wii.jpg",
+    soldOut: false,
+  },
+];
+
 
 function App() {
 
 
   return (
     <>
-      <div>
+      <div className='container'>
        <Header/>
        <Menu/>
        <Footer/>
@@ -22,7 +69,7 @@ function Header(){
   //const style = {color: 'green', fontSize: '60px', textTransform: 'uppercase'}
   return (
     <header className="header">
-      <h1 style={style}>React Pizza Co.</h1>
+      <h1 style={style}>React Nintendo Consoles Co.</h1>
     </header>
   )
 }
@@ -32,23 +79,26 @@ function Header(){
 function Menu(){
   return (
     <main className='menu'>
-      <h2>Our menu</h2>
-      <Pizza
-        name='Pizza ...'
-        ingridients='Pepperoni, Tomato, Mozarella, Chilli, Onion'
-        photoName='./public/pizza_diavola.jpg'
-        price={10}/>
+      <h2>Our systems</h2>
+     <ul className='pizzas'>
+      {consoleData.map((console =>
+        <Console consoleObj={console} key={console.name}/>
+      ))}
+     </ul>
     </main>
   )
 }
 
-function Pizza(props){
+function Console(props){
   return(
-    <div>
-      <img src={props.photoName} alt={props.name}/>
-      <h3>{props.name}</h3>
-      <p>{props.ingridients}</p>
-    </div>
+    <li className='pizza'>
+      <img src={props.consoleObj.photoName} alt={props.consoleObj.name}/>
+      <div>
+        <h3>{props.consoleObj.name}</h3>
+        <p>{props.consoleObj.description}</p>
+        <span>{props.consoleObj.price}</span>
+      </div>
+    </li>
   )
 }
 
