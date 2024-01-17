@@ -5,5 +5,6 @@ Welcome to the Nintendo Console Order App! This simple React project allows user
 View a list of available Nintendo consoles in a 90's-90's feeling website.
 
 
-![React First Website](https://github.com/anaktas24/react-nintendo-menu/assets/72883899/ab89b668-fb10-46e4-9b10-503dd9a64a7f)
+![Στιγμιότυπο οθόνης 2024-01-17 212139](https://github.com/anaktas24/react-nintendo-menu/assets/72883899/64be043b-1972-42c1-8535-150e3511337e)
+
 
