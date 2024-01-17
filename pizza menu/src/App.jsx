@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
-import React from "react"
-import { ReactDOM } from "react";
+// import React from "react"
+// import { ReactDOM } from "react";
 import './App.css'
 
 
@@ -96,14 +96,16 @@ function Menu(){
   )
 }
 
-function Console(props){
+function Console({consoleObj}){
+
+  if (consoleObj.soldOut) return null
   return(
     <li className='pizza'>
-      <img src={props.consoleObj.photoName} alt={props.consoleObj.name}/>
+      <img src={consoleObj.photoName} alt={consoleObj.name}/>
       <div>
-        <h3>{props.consoleObj.name}</h3>
-        <p>{props.consoleObj.description}</p>
-        <span>{props.consoleObj.price}</span>
+        <h3>{consoleObj.name}</h3>
+        <p>{consoleObj.description}</p>
+        <span>{consoleObj.price}</span>
       </div>
     </li>
   )
@@ -116,17 +118,21 @@ function Footer(){
   const isOpen = hour >= openHours && hour <= closeHours
   console.log(isOpen)
 
-
   return(
     <footer className='footer'>
-      {isOpen ? (
-        <div>
-          <p>We're open until {closeHours}:00</p>
-          <button className="btn">Order</button>
-        </div>
-       ): (<p>We;re happy to welcome you between {openHours}:00 and {closeHours}:00.</p>
+      {isOpen ?
+      <Order closeHour={closeHours} openHour={openHours}/>
+       : (<p>We;re happy to welcome you between {openHours}:00 and {closeHours}:00.</p>
       )}
     </footer>
+  )
+}
+function Order({closeHour, openHour}) {
+  return(
+    <div className='order'>
+      <p>We're open from {openHour}:00 until {closeHour}:00</p>
+      <button className="btn">Order</button>
+    </div>
   )
 }
 
