@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from "react"
 import { ReactDOM } from "react";
 import './App.css'
@@ -110,7 +111,16 @@ function Footer(){
   console.log(isOpen)
 
 
-  return <footer className='footer'>{new Date().toLocaleTimeString()}. Were currently open</footer>
+  return(
+    <footer className='footer'>
+      {isOpen && (
+        <div>
+          <p>We're open until {closeHours}:00</p>
+          <button className="btn">Order</button>
+        </div>
+      )}
+    </footer>
+  )
 }
 
 
