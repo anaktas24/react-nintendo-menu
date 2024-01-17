@@ -78,14 +78,20 @@ function Header(){
 
 
 function Menu(){
+   const consoles = consoleData
+   const numConsoles = consoles.length
   return (
     <main className='menu'>
       <h2>Our systems</h2>
-     <ul className='pizzas'>
-      {consoleData.map((console =>
-        <Console consoleObj={console} key={console.name}/>
-      ))}
-     </ul>
+
+
+      {numConsoles > 0 ? (
+      <ul className='pizzas'>
+        {consoleData.map((console =>
+          <Console consoleObj={console} key={console.name}/>
+        ))}
+      </ul>
+      ) :  (<p>We're still working on our site. Please come back later:</p>)}
     </main>
   )
 }
@@ -113,11 +119,12 @@ function Footer(){
 
   return(
     <footer className='footer'>
-      {isOpen && (
+      {isOpen ? (
         <div>
           <p>We're open until {closeHours}:00</p>
           <button className="btn">Order</button>
         </div>
+       ): (<p>We;re happy to welcome you between {openHours}:00 and {closeHours}:00.</p>
       )}
     </footer>
   )
