@@ -8,44 +8,43 @@ const consoleData = [
   {
     name: "N64",
     description: "Console 1996",
-    price: 6,
+    price: "$200 at launch",
     photoName: "./n64.jpg",
-    soldOut: false,
+
   },
   {
     name: "Game Cube",
     description: "Console 2001",
-    price: 10,
+    price: "$200 at launch",
     photoName: "./cube.jpg",
-    soldOut: false,
+
   },
   {
     name: "GameBoy Advance",
     description: "Console 2001",
-    price: 12,
+    price: "$100 at launch",
     photoName: "./adv.jpg",
-    soldOut: false,
+
   },
   {
     name: "NES",
     description: "Console 1983",
-    price: 12,
+    price: "$200 at launch",
     photoName: "./nes.jpg",
-    soldOut: false,
+
   },
   {
     name: "Super Famicom",
     description: "Console 1990",
-    price: 15,
+    price: "$179 at launch",
     photoName: "./super.jpg",
-    soldOut: true,
   },
   {
     name: "Wii",
     description: "Console 2006",
-    price: 18,
+    price: "$250 at launch",
     photoName: "./wii.jpg",
-    soldOut: false,
+
   },
 ];
 
@@ -85,12 +84,18 @@ function Menu(){
       <h2>Our systems</h2>
 
 
+
       {numConsoles > 0 ? (
-      <ul className='pizzas'>
-        {consoleData.map((console =>
-          <Console consoleObj={console} key={console.name}/>
-        ))}
-      </ul>
+        <>
+          <p>
+            Shop consoles throught the years, exclusive Nintendo merchandise, and more! Plus, get free shipping on orders $50 and over.
+          </p>
+          <ul className='pizzas'>
+            {consoleData.map((console =>
+              <Console consoleObj={console} key={console.name}/>
+            ))}
+          </ul>
+        </>
       ) :  (<p>We're still working on our site. Please come back later:</p>)}
     </main>
   )
